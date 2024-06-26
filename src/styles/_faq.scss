@@ -1,0 +1,97 @@
+@use 'variaveis.scss';
+
+.faq {
+    padding: 5.6vw;
+    
+    h2 {
+        text-align: center;
+        color: variaveis.$corTextoPrincipal;
+    }
+    &__movies {
+        background-color: variaveis.$corBackgroundFaq;
+        list-style: none;
+        &__item {
+           
+            &__movie {
+                color: variaveis.$corTextoPrincipal;
+                padding: 24px;
+                cursor: pointer;
+                position: relative;
+                display: block;
+ 
+                &::after {
+                    content: '+';
+                    position: absolute;
+                    align-items: center;
+                    font-size: 24px;
+                    height: 100%;
+                    top: 0;
+                    right: 24px;
+                    display: flex;
+                }
+
+                @media (max-width: 768px) {
+                    .title {
+                        font-size: 28px;
+                    }
+                }
+            }
+
+            &__sinopse {
+                color: variaveis.$corTextoPrincipal;
+                height: 0;
+                overflow: hidden;
+                padding: 0 24px;
+                transition: height, .5s ease;
+                
+                .text {
+                    margin-bottom: 10px;
+                }
+                
+                strong {
+                    letter-spacing: 2px;
+                    font-weight: 500;
+                    
+                }
+
+                
+
+                
+            }
+
+            &--is-active {
+                .faq__movies__item__movie::after {
+                    content: '-';
+                }
+
+                .faq__movies__item__sinopse {
+                    height: auto;
+                    padding-bottom: 24px;
+                    transition: height, .5s ease;
+
+                    ul {
+                        margin-top: 16px;
+                        padding-left: 40px;
+
+                        li {
+                            margin-top: 24px;
+                        }
+                    }
+                }
+            }
+
+            
+        }
+
+        &__sinopse {
+            height: 0;
+            overflow: hidden;
+            padding: 0 24px;
+            
+
+           
+        }
+    }
+
+
+}

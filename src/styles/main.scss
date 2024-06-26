@@ -1,0 +1,64 @@
+@use 'variaveis.scss';
+@use 'header';
+@use 'hero';
+@use 'shows';
+@use 'faq';
+@use 'footer';
+
+
+@font-face {
+    font-family: Roboto;
+    src: url('../../assets/fonts/Roboto-Medium.ttf');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: BebasNeue;
+    src: url('../../assets/fonts/BebasNeue-Regular.ttf');
+    font-weight: 400;
+}
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+}
+
+@mixin title($fontSize: 40px){
+    @include text($fontSize);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+
+body {
+    background-color: variaveis.$corBackground;
+    font-family: BebasNeue;
+}
+
+.button {
+    background-color: variaveis.$corDoBotaoPrimario;
+    color: variaveis.$corTextoPrincipal;
+    padding: 16px 32px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.title {
+    @include title();
+    letter-spacing: 1px;
+    font-family: BebasNeue;
+}
+
+.text {
+    @include text();
+}
+
+.text--big {
+    @include text(24px);
+}

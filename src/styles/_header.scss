@@ -1,0 +1,50 @@
+@use 'variaveis.scss';
+
+.header {
+    z-index: 1;
+    position: sticky;
+    top: 0;
+    left: 0;
+    transition: .5s ease;
+    background-color: variaveis.$corBackground;
+    &__container {
+        display: flex;
+        margin: 0 auto;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 36px;
+    }
+
+    &__links {
+        list-style: none;
+        display: flex;
+
+        &__item {
+            margin-left: 8px;
+
+            @media (max-width: 768px) {
+                .button {
+                    display: block;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    &__logo {
+        width: 90px;
+    }
+
+    &--is-hidden {
+        background-color: transparent;
+        transition: .5s ease;
+
+        .header {
+            &__container, &__logo {
+                opacity: 0;
+                visibility: hidden;
+                transition: .5s ease;
+            }
+        }
+    }
+}
